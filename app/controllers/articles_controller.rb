@@ -9,7 +9,7 @@ class ArticlesController < ApplicationController
   def show
     article = Article.find(params[:id])
     session[:page_views] ||= 0
-   pages =session[:page_views] += 1
+    pages = session[:page_views] += 1
 
     if pages <= 3
       render json: article
